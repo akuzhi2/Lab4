@@ -7,6 +7,7 @@
  * 4. Add comments and Javadoc comments where needed
  * 5. Remove unnecessary comments as appropriate
  */
+
 /**
  * this class finds the smallest word in the largerst word.
  */
@@ -15,7 +16,7 @@ public class ReclamationProject {
      *
      * @param wordOne one word
      * @param wordTwo another word
-     * @return r
+     * @return newWord section of the smallest word
      */
     public static String doIt(final String wordOne, final String wordTwo) {
         String newWordOne = wordOne;
@@ -25,18 +26,18 @@ public class ReclamationProject {
             newWordTwo = wordOne;
 
         }
-        String r = "";
+        String newWord = "";
         for (int i = 0; i < newWordOne.length(); i++) {
             for (int j = newWordOne.length() - i; j > 0; j--) {
                 for (int k = 0; k < newWordTwo.length() - j; k++) {
                     if (newWordOne.regionMatches(i, newWordTwo, k, j) && j > r.length()) {
-                        r = newWordOne.substring(i, i + j);
+                        newWord = newWordOne.substring(i, i + j);
                     }
                 }
             }
         }
 
-     return r;
+     return newWOrd;
     }
 }
 
