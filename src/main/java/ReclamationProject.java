@@ -30,14 +30,14 @@ public class ReclamationProject {
         for (int i = 0; i < newWordOne.length(); i++) {
             for (int j = newWordOne.length() - i; j > 0; j--) {
                 for (int k = 0; k < newWordTwo.length() - j; k++) {
-                    if (newWordOne.regionMatches(i, newWordTwo, k, j) && j > r.length()) {
+                    if (newWordOne.regionMatches(i, newWordTwo, k, j) && j > newWord.length()) {
                         newWord = newWordOne.substring(i, i + j);
                     }
                 }
             }
         }
 
-     return newWOrd;
+     return newWord;
     }
 }
 
