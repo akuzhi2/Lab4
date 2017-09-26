@@ -7,20 +7,36 @@
  * 4. Add comments and Javadoc comments where needed
  * 5. Remove unnecessary comments as appropriate
  */
+/**
+ * this class finds the smallest word in the largerst word.
+ */
+public class ReclamationProject {
+    /**
+     *
+     * @param wordOne one word
+     * @param wordTwo another word
+     * @return r
+     */
+    public static String doIt(final String wordOne, final String wordTwo) {
+        String newWordOne = wordOne;
+        String newWordTwo = wordTwo;
+        if (wordOne.length() > wordTwo.length()) {
+            newWordOne = wordTwo;
+            newWordTwo = wordOne;
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
-        /*
-         * For loop with i
-         */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+        }
+        String r = "";
+        for (int i = 0; i < newWordOne.length(); i++) {
+            for (int j = newWordOne.length() - i; j > 0; j--) {
+                for (int k = 0; k < newWordTwo.length() - j; k++) {
+                    if (newWordOne.regionMatches(i, newWordTwo, k, j) && j > r.length()) {
+                        r = newWordOne.substring(i, i + j);
+                    }
+                }
+            }
+        }
+
+     return r;
+    }
 }
+
