@@ -18,7 +18,7 @@ public class ReclamationProject {
      * @param wordTwo another word
      * @return newWord section of the smallest word
      */
-    public static String doIt(final String wordOne, final String wordTwo) {
+    public static String findLongestString(final String wordOne, final String wordTwo) {
         String newWordOne = wordOne;
         String newWordTwo = wordTwo;
         if (wordOne.length() > wordTwo.length()) {
